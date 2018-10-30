@@ -5,10 +5,10 @@ public class ObservableUE extends UE {
     private List<ObserverUE> observers;
     private List<ObservableClass> classes;
 
-    public ObservableUE(String name, String code){
+    public ObservableUE(String name, String code, List<ObservableClass> classes){
         super(name, code);
         this.observers = new ArrayList<ObserverUE>();
-        this.classes = new ArrayList<ObservableClass>();
+        this.classes = classes;
     }
 
     // override of setInfoSheet may be necessary if the protected

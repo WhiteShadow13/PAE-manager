@@ -4,13 +4,13 @@ import java.util.List;
 public class ObserverUE extends UE {
     private Boolean validated;
     private Boolean accept_status;
-    private List<EClass> classes;
+    private List<ObserverClass> classes;
 
     public ObserverUE(String name, String code){
         super(name, code);
         this.validated = false;
         this.accept_status = false;
-        this.classes = new ArrayList<EClass>();
+        this.classes = new ArrayList<ObserverClass>();
     }
 
     /*
@@ -45,7 +45,7 @@ public class ObserverUE extends UE {
      * ObservableUE, should recalculate hours and credits and update
      * the info sheet -> calculated in Observable
      *
-     * inputs: credits, hours
+     * inputs: int, int (credits, hours)
      * outputs: void
      * */
     public void update(){};
