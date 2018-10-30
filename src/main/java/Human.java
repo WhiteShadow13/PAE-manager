@@ -7,9 +7,13 @@ public class Human {
         this.lastname = lastname;
     }
 
+    /*
+    * Getter for name + lastname
+    *
+    * input: void
+    * output: string (full name)
+    * */
     public String getName(){
-        return name;
+        return name + " " + lastname;
     }
-
-    //THIS IS A TEST
 }
