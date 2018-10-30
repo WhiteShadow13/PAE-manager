@@ -10,8 +10,8 @@ public class Human {
     /*
     * Getter for name + lastname
     *
-    * input: void
-    * output: string (full name)
+    * inputs: void
+    * outputs: string (full name)
     * */
     public String getName(){
         return name + " " + lastname;
