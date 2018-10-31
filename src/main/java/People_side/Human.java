@@ -1,3 +1,5 @@
+package People_side;
+
 public class Human {
     private final String name;
     private final String lastname;

@@ -1,3 +1,8 @@
+package ECAM_side;
+
+import People_side.Student;
+import People_side.Teacher;
+
 import java.util.Map;
 import java.util.HashMap;
 
@@ -17,7 +22,7 @@ public class ECAM {
      * Get singleton instance
      *
      * inputs: void
-     * outputs: ECAM
+     * outputs: ECAM_side.ECAM
      * */
     public void getInstance(){}
 
@@ -32,24 +37,24 @@ public class ECAM {
      * -> Electromecanique
      *
      * inputs: string (orientation code)
-     * outputs: Orientation
+     * outputs: ECAM_side.Orientation
      * */
     public void getOrientation(){}
 
     /*
      * Adds a teacher to teacher map
-     * Teacher ID will be used for mapping
+     * People_side.Teacher ID will be used for mapping
      *
-     * inputs: Teacher
+     * inputs: People_side.Teacher
      * outputs: void
      * */
     public void addTeacher(){}
 
     /*
      * Adds a student to student list
-     * Student ID will be used for mapping
+     * People_side.Student ID will be used for mapping
      *
-     * inputs: Student
+     * inputs: People_side.Student
      * outputs: void
      * */
     public void addStudent(){}

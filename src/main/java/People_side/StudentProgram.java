@@ -1,3 +1,7 @@
+package People_side;
+
+import UE_classes.UE;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +22,7 @@ public class StudentProgram {
      * Getter for content List
      *
      * inputs: void
-     * outputs: List<UE>
+     * outputs: List<UE_classes.UE>
      * */
     public void getContents(){}
 

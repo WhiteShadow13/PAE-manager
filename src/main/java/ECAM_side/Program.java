@@ -1,3 +1,5 @@
+package ECAM_side;
+
 import java.util.List;
 
 public class Program {
@@ -8,10 +10,10 @@ public class Program {
     }
 
     /*
-     * Get a specific Bloc from a program
+     * Get a specific ECAM_side.Bloc from a program
      *
      * inputs: int (year)
-     * outputs: Bloc
+     * outputs: ECAM_side.Bloc
      * */
     public void getBloc(){}
 }

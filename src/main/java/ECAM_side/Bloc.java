@@ -1,3 +1,7 @@
+package ECAM_side;
+
+import UE_classes.ObservableUE;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,10 +13,10 @@ public class Bloc {
     }
 
     /*
-     * Get a specific UE from the UE hashmap
+     * Get a specific UE_classes.UE from the UE_classes.UE hashmap
      *
-     * inputs: string (UE code)
-     * outputs: ObservableUE
+     * inputs: string (UE_classes.UE code)
+     * outputs: UE_classes.ObservableUE
      * */
     public void getContent(){}
 }

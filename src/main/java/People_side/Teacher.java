@@ -1,3 +1,5 @@
+package People_side;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,25 +33,25 @@ public class Teacher extends Human {
     public void getSchedule(){}
 
     /*
-     * Setter for a UE's info sheet
+     * Setter for a UE_classes.UE's info sheet
      *
-     * inputs: ObservableUE, string (path to info sheet)
+     * inputs: UE_classes.ObservableUE, string (path to info sheet)
      * outputs: void
      * */
     public void setInfoSheet(){}
 
     /*
-     * Setter for a UE's credits
+     * Setter for a UE_classes.UE's credits
      *
-     * inputs: ObservableUE, int
+     * inputs: UE_classes.ObservableUE, int
      * outputs: void
      * */
     public void setCredits(){}
 
     /*
-     * Setter for UE's hours
+     * Setter for UE_classes.UE's hours
      *
-     * inputs: ObservableUE, int
+     * inputs: UE_classes.ObservableUE, int
      * outputs: void
      * */
     public void setNHours(){}
@@ -58,13 +60,13 @@ public class Teacher extends Human {
      * Gets a student's history of student programs
      *
      * inputs: int (student matricule)
-     * outputs: List<StudentProgram>
+     * outputs: List<People_side.StudentProgram>
      * */
     public void getStudentPAE(){}
 
     /*
-     * Accept a student into an UE, therefore turning the
-     * acepted_status of that students ObserverUE to true
+     * Accept a student into an UE_classes.UE, therefore turning the
+     * acepted_status of that students UE_classes.ObserverUE to true
      *
      * inputs: int (matricule)
      * outputs: void

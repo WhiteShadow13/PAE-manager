@@ -1,7 +1,12 @@
+package UE_classes;
+
+import UE_classes.Class;
+import UE_classes.ObserverClass;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ObservableClass extends Class{
+public class ObservableClass extends Class {
     private List<ObserverClass> observers;
 
     public ObservableClass(String name, String code){
@@ -28,7 +33,7 @@ public class ObservableClass extends Class{
     /*
      * Adds a teacher to the teacher list
      *
-     * inputs: Teacher
+     * inputs: People_side.Teacher
      * outputs: void
      * */
     public void addTeacher(){}
@@ -36,7 +41,7 @@ public class ObservableClass extends Class{
     /*
      * Deletes a teacher from the teacher list
      *
-     * inputs: Teacher
+     * inputs: People_side.Teacher
      * outputs: void
      * */
     public void delTeacher(){}

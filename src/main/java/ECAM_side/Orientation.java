@@ -1,3 +1,5 @@
+package ECAM_side;
+
 public class Orientation {
     private Program bachelor;
     private Program master;
@@ -11,7 +13,7 @@ public class Orientation {
      * Getter for bachelor
      *
      * inputs: void
-     * outputs: Program
+     * outputs: ECAM_side.Program
      * */
     public void getBachelor(){}
 
@@ -19,7 +21,7 @@ public class Orientation {
      * Getter for master
      *
      * inputs: void
-     * outputs: Program
+     * outputs: ECAM_side.Program
      * */
     public void getMaster(){}
 }

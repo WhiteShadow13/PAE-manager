@@ -1,3 +1,5 @@
+package UE_classes;
+
 public class UE {
     private final String name;
     private final String code;

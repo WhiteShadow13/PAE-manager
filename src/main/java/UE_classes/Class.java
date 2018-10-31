@@ -1,3 +1,7 @@
+package UE_classes;
+
+import People_side.Teacher;
+
 import java.util.ArrayList;
 import java.util.List;
 
