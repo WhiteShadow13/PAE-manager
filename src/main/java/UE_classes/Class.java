@@ -2,19 +2,19 @@ package UE_classes;
 
 import People_side.Teacher;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Class {
     final private String name;
     final private String code;
     private int nhours;
-    private List<Teacher> teachers;
+    private Map<String, Teacher> teachers;
 
     public Class(String name, String code){
         this.name = name;
         this.code = code;
-        this.teachers = new ArrayList<Teacher>();
+        this.teachers = new HashMap<String, Teacher>();
     }
 
     /*
@@ -37,7 +37,7 @@ public class Class {
      * Getter for number of hours
      *
      * inputs: void
-     * outputs: string
+     * outputs: int
      * */
     public void getNHours(){}
 
@@ -45,7 +45,7 @@ public class Class {
      * Getter for teacher list
      *
      * inputs: void
-     * outputs: string
+     * outputs: HashMap<String, Teacher>
      * */
     public void getTeachers(){}
 }

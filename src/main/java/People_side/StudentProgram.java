@@ -1,21 +1,21 @@
 package People_side;
 
-import UE_classes.UE;
+import UE_classes.ObserverUE;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StudentProgram {
     private final String year;
     private final String academic_year;
     private int ncredits;
-    private List<UE> content;
+    private Map<String, ObserverUE> content;
 
     public StudentProgram(String year, String acyear, int cred) {
         this.year = year;
         this.academic_year = acyear;
         this.ncredits = cred;
-        this.content = new ArrayList<UE>();
+        this.content = new HashMap<String, ObserverUE>();
     }
 
     /*
@@ -29,6 +29,8 @@ public class StudentProgram {
     /*
      * Add content to content list thanks to
      * year and code. f.e.: 4MIN, SA4L
+     * -> uses year and code to fetch an ObservableUE
+     * from ECAM to add a new ObserverUE to content
      *
      * inputs: string, string (year, code)
      * outputs: void

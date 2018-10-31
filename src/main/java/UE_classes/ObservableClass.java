@@ -41,7 +41,7 @@ public class ObservableClass extends Class {
     /*
      * Deletes a teacher from the teacher list
      *
-     * inputs: People_side.Teacher
+     * inputs: int (mapped ID)
      * outputs: void
      * */
     public void delTeacher(){}
