@@ -1,3 +1,7 @@
+package UE_classes;
+
+import UE_classes.UE;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,10 +9,10 @@ public class ObservableUE extends UE {
     private List<ObserverUE> observers;
     private List<ObservableClass> classes;
 
-    public ObservableUE(String name, String code){
+    public ObservableUE(String name, String code, List<ObservableClass> classes){
         super(name, code);
         this.observers = new ArrayList<ObserverUE>();
-        this.classes = new ArrayList<ObservableClass>();
+        this.classes = classes;
     }
 
     // override of setInfoSheet may be necessary if the protected
@@ -16,7 +20,7 @@ public class ObservableUE extends UE {
 
     /*
      * Setter for credits, int will probably be calculated
-     * using the sum of ObservableClass's credits
+     * using the sum of UE_classes.ObservableClass's credits
      *
      * inputs: int
      * outputs: void
@@ -25,7 +29,7 @@ public class ObservableUE extends UE {
 
     /*
      * Setter for hours, int will probably be calculated
-     * using the sum of ObservableClass's hours
+     * using the sum of UE_classes.ObservableClass's hours
      *
      * inputs: int
      * outputs: void
@@ -33,7 +37,7 @@ public class ObservableUE extends UE {
     public void setHours(){}
 
     /*
-     * Calculates total credits from UE classes and
+     * Calculates total credits from UE_classes.UE classes and
      * modifies credits
      *
      * inputs: void
@@ -42,7 +46,7 @@ public class ObservableUE extends UE {
     public void calcCredits(){};
 
     /*
-     * Calculates total hours from UE classes and
+     * Calculates total hours from UE_classes.UE classes and
      * modifies nhours
      *
      * inputs: void

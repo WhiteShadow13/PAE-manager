@@ -1,3 +1,5 @@
+package People_side;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,11 +49,11 @@ public class Student extends Human {
     public void getValidCredits(){}
 
     /*
-     * Add a new StudentProgram object to the
+     * Add a new People_side.StudentProgram object to the
      * program list, representing a new year for
      * the student
      *
-     * inputs: StudentProgram
+     * inputs: People_side.StudentProgram
      * outputs: void
      * */
     public void newProgram(){}
