@@ -6,6 +6,7 @@
 
 # User-specific stuff
 .idea/workspace.xml
+target/
 PAE-manager.iml
 .idea/**/ workspace.xml
 .idea/**/tasks.xml

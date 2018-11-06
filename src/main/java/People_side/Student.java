@@ -19,7 +19,7 @@ public class Student extends Human {
     * inputs: void
     * outputs: int
     * */
-    public void getID(){}
+    public int getID(){return 0;}
 
     /*
      * Gives back the status of a class after
@@ -28,7 +28,7 @@ public class Student extends Human {
      * inputs: string (class code)
      * outputs: Boolean (class status)
      * */
-    public void getStatus(){}
+    public Boolean getStatus(String code){return false;}
 
     /*
      * Gets the total amount of credits for the
