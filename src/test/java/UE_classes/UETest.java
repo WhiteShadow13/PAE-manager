@@ -16,12 +16,14 @@ public class UETest {
 
     @Test
     public void getHours() {
+        DD4L.testSetParam();
         int hours = DD4L.getHours();
         Assert.assertEquals(30, hours);
     }
 
     @Test
     public void getCredits() {
+        DD4L.testSetParam();
         int creds = DD4L.getCredits();
         Assert.assertEquals(30, creds);
     }
@@ -35,6 +37,7 @@ public class UETest {
 
     @Test
     public void getInfoSheet() {
+        DD4L.testSetParam();
         String infS = DD4L.getInfoSheet();
         Assert.assertEquals("base", infS);
     }
