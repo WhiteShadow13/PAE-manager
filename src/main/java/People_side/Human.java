@@ -1,3 +1,5 @@
+package People_side;
+
 public class Human {
     private final String name;
     private final String lastname;
@@ -7,7 +9,13 @@ public class Human {
         this.lastname = lastname;
     }
 
+    /*
+    * Getter for name + lastname
+    *
+    * inputs: void
+    * outputs: string (full name)
+    * */
     public String getName(){
-        return name;
+        return name + " " + lastname;
     }
 }
