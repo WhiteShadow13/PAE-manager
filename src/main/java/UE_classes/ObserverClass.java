@@ -17,7 +17,7 @@ public class ObserverClass extends Class {
      * inputs: void
      * outputs: void
      * */
-    public void validate(){};
+    public void validate(){}
 
     /*
      * Used in UE_classes.ObservableClass to update all observer
@@ -26,5 +26,13 @@ public class ObserverClass extends Class {
      * inputs: int (hours)
      * outputs: void
      * */
-    public void update(){};
+    public void update(int hours){}
+
+    /*
+     * Necessary for unit tests
+     *
+     * inputs: void
+     * outputs: Boolean
+     * */
+    public Boolean getValidate(){ return true; }
 }
