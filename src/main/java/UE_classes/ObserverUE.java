@@ -24,7 +24,7 @@ public class ObserverUE extends UE {
     * inputs: void
     * outputs: void
     * */
-    public void validate(){};
+    public void validate(){}
 
     /*
      * Gettter for accepted_status to know whether
@@ -33,7 +33,7 @@ public class ObserverUE extends UE {
      * inputs: void
      * outputs: Boolean
      * */
-    public void getStatus(){};
+    public Boolean getStatus(){return true;}
 
     /*
      * Calculates total validated credits from UE_classes.UE classes and
@@ -42,7 +42,7 @@ public class ObserverUE extends UE {
      * inputs: void
      * outputs: int
      * */
-    public void calcValidCredits(){};
+    public void calcValidCredits(){}
 
     /*
      * Function called whenever a change happens in corresponding
@@ -52,5 +52,24 @@ public class ObserverUE extends UE {
      * inputs: int, int (credits, hours)
      * outputs: void
      * */
-    public void update(){};
+    public void update(){}
+
+    /*
+     * validate getter necessary for testing
+     *
+     * inputs: void
+     * outputs: Boolean
+     * */
+    public Boolean testValidate(){return this.validated;}
+
+    /*
+     * Modifies params for testing
+     *
+     * inputs: void
+     * outputs: void
+     * */
+    public void testSetParam(){
+        this.accept_status = true;
+        this.classes.add(new ObserverClass("SA4L", "1E0101"));
+    }
 }

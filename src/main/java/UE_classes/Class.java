@@ -23,7 +23,7 @@ public class Class {
      * inputs: void
      * outputs: string
      * */
-    public void getName(){}
+    public String getName(){ return this.name; }
 
     /*
      * Getter for code
@@ -31,7 +31,7 @@ public class Class {
      * inputs: void
      * outputs: string
      * */
-    public void getCode(){}
+    public String getCode(){ return this.code; }
 
     /*
      * Getter for number of hours
@@ -39,7 +39,15 @@ public class Class {
      * inputs: void
      * outputs: int
      * */
-    public void getNHours(){}
+    public int getNHours(){ return this.nhours; }
+
+    /*
+     * Setter for number of hours
+     *
+     * inputs: int
+     * outputs: void
+     * */
+    public void setNHours(int hours){ this.nhours = hours; }
 
     /*
      * Getter for teacher list
@@ -47,5 +55,13 @@ public class Class {
      * inputs: void
      * outputs: HashMap<String, Teacher>
      * */
-    public void getTeachers(){}
+    public Map<String, Teacher> getTeachers(){ return this.teachers; }
+
+    /*
+     * Setter method for unit test
+     *
+     * inputs: void
+     * outputs: void
+     * */
+    public void testSetParam(){ this.nhours = 10; }
 }

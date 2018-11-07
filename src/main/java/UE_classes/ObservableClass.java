@@ -1,7 +1,6 @@
 package UE_classes;
 
-import UE_classes.Class;
-import UE_classes.ObserverClass;
+import People_side.Teacher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ public class ObservableClass extends Class {
      * inputs: int
      * outputs: void
      * */
-    public void setCredits(){}
+    public void setCredits(int creds){}
 
     /*
      * Setter for hours
@@ -28,7 +27,7 @@ public class ObservableClass extends Class {
      * inputs: int
      * outputs: void
      * */
-    public void setNHours(){}
+    public void setNHours(int hours){}
 
     /*
      * Adds a teacher to the teacher list
@@ -36,7 +35,7 @@ public class ObservableClass extends Class {
      * inputs: People_side.Teacher
      * outputs: void
      * */
-    public void addTeacher(){}
+    public void addTeacher(Teacher teacher){}
 
     /*
      * Deletes a teacher from the teacher list
@@ -44,7 +43,7 @@ public class ObservableClass extends Class {
      * inputs: int (mapped ID)
      * outputs: void
      * */
-    public void delTeacher(){}
+    public void delTeacher(int ID){}
 
     /*
      * Notifies all observers they should update

@@ -18,23 +18,23 @@ public class UE {
     * inputs: void
     * outputs: String
     * */
-    public void getCode(){}
+    public String getCode(){ return this.code; }
 
     /*
      * Getter for class hours
      *
      * inputs: void
-     * outputs: String
+     * outputs: int
      * */
-    public void getHours(){}
+    public int getHours(){ return this.nhours; }
 
     /*
      * Getter for class credits
      *
      * inputs: void
-     * outputs: String
+     * outputs: int
      * */
-    public void getCredits(){}
+    public int getCredits(){ return this.credits; }
 
     /*
     * Setter for infosheet, protected because Observer's
@@ -43,7 +43,9 @@ public class UE {
     * inputs: string (path to infosheet)
     * outputs: void
     * */
-    protected void setInfoSheet(){}
+    protected void setInfoSheet(String path){
+        this.info_sheet = path;
+    }
 
     /*
      * Getter for class infosheet
@@ -51,5 +53,17 @@ public class UE {
      * inputs: void
      * outputs: String (path to infosheet)
      * */
-    public void getInfoSheet(){}
+    public String getInfoSheet(){ return this.info_sheet; }
+
+    /*
+     * Used in unit tests to modify private params
+     *
+     * inputs: void
+     * outputs: void
+     * */
+    public void testSetParam(){
+        this.nhours = 30;
+        this.credits = 30;
+        this.info_sheet = "base";
+    }
 }
