@@ -17,7 +17,13 @@ public class ObserverClass extends Class {
      * inputs: void
      * outputs: void
      * */
-    public void validate(){}
+    public void validate(){
+        if (this.validated){
+            this.validated = false;
+        } else {
+            this.validated = true;
+        }
+    }
 
     /*
      * Used in UE_classes.ObservableClass to update all observer
@@ -26,7 +32,9 @@ public class ObserverClass extends Class {
      * inputs: int (hours)
      * outputs: void
      * */
-    public void update(int hours){}
+    public void update(int hours){
+        this.setNHours(hours);
+    }
 
     /*
      * Necessary for unit tests
@@ -34,5 +42,5 @@ public class ObserverClass extends Class {
      * inputs: void
      * outputs: Boolean
      * */
-    public Boolean getValidate(){ return true; }
+    public Boolean getValidate(){ return this.validated; }
 }

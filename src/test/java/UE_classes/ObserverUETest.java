@@ -25,6 +25,8 @@ public class ObserverUETest {
 
     @Test
     public void calcValidCredits() {
+        DD4L.update();
+
     }
 
     @Test

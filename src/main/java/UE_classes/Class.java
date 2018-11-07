@@ -42,6 +42,14 @@ public class Class {
     public int getNHours(){ return this.nhours; }
 
     /*
+     * Setter for number of hours
+     *
+     * inputs: int
+     * outputs: void
+     * */
+    public void setNHours(int hours){ this.nhours = hours; }
+
+    /*
      * Getter for teacher list
      *
      * inputs: void

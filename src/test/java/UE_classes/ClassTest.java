@@ -25,6 +25,14 @@ public class ClassTest {
     }
 
     @Test
+    public void setNHours() {
+        SA4T.testSetParam();
+        Assert.assertEquals(10, SA4T.getNHours());
+        SA4T.setNHours(5);
+        Assert.assertEquals(5, SA4T.getNHours());
+    }
+
+    @Test
     public void getTeachers() {
         Assert.assertTrue(false);
     }

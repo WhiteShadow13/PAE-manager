@@ -60,5 +60,6 @@ public class ObservableUE extends UE {
      * inputs: void
      * outputs: void
      * */
-    public void notifyObserver(){}
+    public void notifyObserver(){
+    }
 }

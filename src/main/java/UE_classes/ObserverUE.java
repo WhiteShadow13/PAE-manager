@@ -70,5 +70,6 @@ public class ObserverUE extends UE {
      * */
     public void testSetParam(){
         this.accept_status = true;
+        this.classes.add(new ObserverClass("SA4L", "1E0101"));
     }
 }
