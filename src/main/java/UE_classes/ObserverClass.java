@@ -26,6 +26,15 @@ public class ObserverClass extends Class {
     }
 
     /*
+     * Used in constructor, manually triggers an update
+     * to force the Observable to update this instance
+     *
+     * inputs: void
+     * outputs: void
+     * */
+    public void firstTimeUpdate(){}
+
+    /*
      * Used in UE_classes.ObservableClass to update all observer
      * classes, puts the hours up to date
      *

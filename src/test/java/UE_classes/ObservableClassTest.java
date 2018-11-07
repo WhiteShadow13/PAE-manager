@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ObservableClassTest {
+    ObservableClass SA4T = new ObservableClass("SA4T", "1E0101");
 
     @Test
     public void setCredits() {

@@ -16,6 +16,13 @@ public class ObserverClassTest {
     }
 
     @Test
+    public void firstTimeUpdate() {
+        Assert.assertEquals(0, SA4T.getNHours());
+        SA4T.firstTimeUpdate();
+        Assert.assertNotEquals(0, SA4T.getNHours());
+    }
+
+    @Test
     public void update() {
         SA4T.update(3);
         Assert.assertEquals(3, SA4T.getNHours());
