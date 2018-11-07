@@ -55,6 +55,18 @@ public class ObservableUE extends UE {
     public void calcHours(){};
 
     /*
+     * Used when a student duplicates this class
+     * and puts it in his program. Will update his instance
+     * and all his class children classes
+     *
+     * -> simply notitifyObserver for now
+     *
+     * inputs: void
+     * outputs: void
+     * */
+    public void duplicate(){}
+
+    /*
      * Goes through all the observers and updates them
      *
      * inputs: void
