@@ -17,7 +17,22 @@ public class ObserverClass extends Class {
      * inputs: void
      * outputs: void
      * */
-    public void validate(){};
+    public void validate(){
+        if (this.validated){
+            this.validated = false;
+        } else {
+            this.validated = true;
+        }
+    }
+
+    /*
+     * Used in constructor, manually triggers an update
+     * to force the Observable to update this instance
+     *
+     * inputs: void
+     * outputs: void
+     * */
+    public void firstTimeUpdate(){}
 
     /*
      * Used in UE_classes.ObservableClass to update all observer
@@ -26,5 +41,15 @@ public class ObserverClass extends Class {
      * inputs: int (hours)
      * outputs: void
      * */
-    public void update(){};
+    public void update(int hours){
+        this.setNHours(hours);
+    }
+
+    /*
+     * Necessary for unit tests
+     *
+     * inputs: void
+     * outputs: Boolean
+     * */
+    public Boolean getValidate(){ return this.validated; }
 }
