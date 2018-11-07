@@ -45,6 +45,7 @@ public class ObservableClassTest {
 
     @Test
     public void duplicate() {
+
     }
 
     @Test
