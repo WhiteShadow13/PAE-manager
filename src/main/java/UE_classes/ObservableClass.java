@@ -11,15 +11,8 @@ public class ObservableClass extends Class {
     public ObservableClass(String name, String code){
         super(name, code);
         this.observers = new ArrayList<ObserverClass>();
+        this.nhours = 10;
     }
-
-    /*
-     * Setter for credits
-     *
-     * inputs: int
-     * outputs: void
-     * */
-    public void setCredits(int creds){}
 
     /*
      * Setter for hours
@@ -46,10 +39,29 @@ public class ObservableClass extends Class {
     public void delTeacher(int ID){}
 
     /*
+     * Used when a student duplicates the parent UE
+     * and puts it in his program. Will update this class
+     *
+     * ->Simply notifyObservers for now
+     *
+     * inputs: int (mapped ID)
+     * outputs: void
+     * */
+    public void duplicate(){}
+
+    /*
      * Notifies all observers they should update
      *
      * inputs: void
      * outputs: void
      * */
     public void notifyObservers(){}
+
+    /*
+     * Getter necessary for testing
+     *
+     * inputs: void
+     * outputs: List<ObserverClass>
+     * */
+    public List<ObserverClass> getObservers(){ return this.observers; }
 }

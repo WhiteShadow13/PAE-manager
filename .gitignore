@@ -6,6 +6,8 @@
 
 # User-specific stuff
 .idea/workspace.xml
+.idea/checkstyleidea-libs/*
+.idea/checkstyle-idea.xml
 target/
 PAE-manager.iml
 .idea/**/ workspace.xml

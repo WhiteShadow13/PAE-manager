@@ -8,7 +8,7 @@ import java.util.Map;
 public class Class {
     final private String name;
     final private String code;
-    private int nhours;
+    protected int nhours;
     private Map<String, Teacher> teachers;
 
     public Class(String name, String code){
