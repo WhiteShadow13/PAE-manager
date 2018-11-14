@@ -1,7 +1,7 @@
 # PAE-Manager
-![travis build](https://travis-ci.org/benjvdb9/PAE-manager.svg?branch=master)
+[![codenv coverage](https://travis-ci.org/benjvdb9/PAE-manager.svg?branch=master)](https://travis-ci.org/benjvdb9/PAE-manager)
 
-![codenv coverage](https://travis-ci.org/benjvdb9/PAE-manager.svg?branch=master)
+[![travis build](https://travis-ci.org/benjvdb9/PAE-manager.svg?branch=master)](https://travis-ci.org/benjvdb9/PAE-manager)
 
 ## ABOUT
 
