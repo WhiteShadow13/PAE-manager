@@ -42,12 +42,18 @@ public class ObservableClass extends Class {
      * Used when a student duplicates the parent UE
      * and puts it in his program. Will update this class
      *
+     * !Allows the observer to trigger an update instead of having!
+     * !to wait for the observable to trigger one                 !
+     *
      * ->Simply notifyObservers for now
+     * -->V.2: update specific Observable only
      *
      * inputs: int (mapped ID)
      * outputs: void
      * */
-    public void duplicate(){}
+    public void duplicate(){
+        this.notifyObservers();
+    }
 
     /*
      * Notifies all observers they should update
@@ -57,7 +63,8 @@ public class ObservableClass extends Class {
      * */
     public void notifyObservers(){}
 
-    /*
+    /* TESTING
+    /* TESTING
      * Getter necessary for testing
      *
      * inputs: void

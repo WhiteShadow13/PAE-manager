@@ -63,5 +63,11 @@ public class Class {
      * inputs: void
      * outputs: void
      * */
-    public void testSetParam(){ this.nhours = 10; }
+    public void testSetParam(){
+        this.nhours = 10;
+        Teacher cbf = new Teacher("Sebastien", "Combefis", 1);
+        Teacher lrk = new Teacher("Quentin", "Lurkin", 2);
+        this.teachers.put("1", cbf);
+        this.teachers.put("2", lrk);
+    }
 }
