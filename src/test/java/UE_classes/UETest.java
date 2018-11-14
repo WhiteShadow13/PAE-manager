@@ -22,10 +22,22 @@ public class UETest {
     }
 
     @Test
+    public void setHours() {
+        DD4L.setHours(42);
+        Assert.assertEquals(42, DD4L.getHours());
+    }
+
+    @Test
     public void getCredits() {
         DD4L.testSetParam();
         int creds = DD4L.getCredits();
         Assert.assertEquals(30, creds);
+    }
+
+    @Test
+    public void setCredits() {
+        DD4L.setCredits(42);
+        Assert.assertEquals(42, DD4L.getCredits());
     }
 
     @Test

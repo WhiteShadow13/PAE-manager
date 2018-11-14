@@ -7,7 +7,7 @@ public class UE {
     private int credits;
     private String info_sheet;
 
-    public UE(String name, String code) {
+    public UE(String name, String code){
         this.name = name;
         this.code = code;
     }
@@ -18,7 +18,7 @@ public class UE {
     * inputs: void
     * outputs: String
     * */
-    public String getCode(){ return this.code; }
+    public String getCode(){return code;}
 
     /*
      * Getter for class hours
@@ -26,7 +26,16 @@ public class UE {
      * inputs: void
      * outputs: int
      * */
-    public int getHours(){ return this.nhours; }
+    public int getHours(){return nhours;}
+
+    /*
+     * Setter for hours, int will probably be calculated
+     * using the sum of UE_classes.ObservableClass's hours
+     *
+     * inputs: int
+     * outputs: void
+     * */
+    public void setHours(int hours){nhours = hours;}
 
     /*
      * Getter for class credits
@@ -34,7 +43,16 @@ public class UE {
      * inputs: void
      * outputs: int
      * */
-    public int getCredits(){ return this.credits; }
+    public int getCredits(){return credits;}
+
+    /*
+     * Setter for credits, int will probably be calculated
+     * using the sum of UE_classes.ObservableClass's credits
+     *
+     * inputs: int
+     * outputs: void
+     * */
+    public void setCredits(int creds){credits = creds;}
 
     /*
     * Setter for infosheet, protected because Observer's
@@ -43,9 +61,7 @@ public class UE {
     * inputs: string (path to infosheet)
     * outputs: void
     * */
-    protected void setInfoSheet(String path){
-        this.info_sheet = path;
-    }
+    protected void setInfoSheet(String path){info_sheet = path;}
 
     /*
      * Getter for class infosheet
@@ -53,7 +69,7 @@ public class UE {
      * inputs: void
      * outputs: String (path to infosheet)
      * */
-    public String getInfoSheet(){ return this.info_sheet; }
+    public String getInfoSheet(){ return info_sheet; }
 
     /*
      * Used in unit tests to modify private params
@@ -61,9 +77,10 @@ public class UE {
      * inputs: void
      * outputs: void
      * */
+
     public void testSetParam(){
-        this.nhours = 30;
-        this.credits = 30;
-        this.info_sheet = "base";
+        nhours = 30;
+        credits = 30;
+        info_sheet = "base";
     }
 }

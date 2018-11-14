@@ -6,44 +6,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObservableUE extends UE {
+    private int nhours;
     private List<ObserverUE> observers;
     private List<ObservableClass> classes;
 
-    public ObservableUE(String name, String code, List<ObservableClass> classes){
+    public ObservableUE(String name, String code){
         super(name, code);
         this.observers = new ArrayList<ObserverUE>();
-        this.classes = classes;
+        this.classes = new ArrayList<ObservableClass>();
     }
 
-    // override of setInfoSheet may be necessary if the protected
-    // method is too restricting, for now it should do
+    /*
+     * Getter for observers
+     *
+     * input: void
+     * output: List<ObserverUE>
+     * */
+    public List<ObserverUE> getObservers() {return observers;}
 
     /*
-     * Setter for credits, int will probably be calculated
-     * using the sum of UE_classes.ObservableClass's credits
+     * Getter for classes
      *
-     * inputs: int
-     * outputs: void
+     * input: void
+     * output: List<ObservableClass>
      * */
-    public void setCredits(){}
-
-    /*
-     * Setter for hours, int will probably be calculated
-     * using the sum of UE_classes.ObservableClass's hours
-     *
-     * inputs: int
-     * outputs: void
-     * */
-    public void setHours(){}
-
-    /*
-     * Calculates total credits from UE_classes.UE classes and
-     * modifies credits
-     *
-     * inputs: void
-     * outputs: void
-     * */
-    public void calcCredits(){};
+    public List<ObservableClass> getClasses() {return classes;}
 
     /*
      * Calculates total hours from UE_classes.UE classes and
@@ -52,7 +39,12 @@ public class ObservableUE extends UE {
      * inputs: void
      * outputs: void
      * */
-    public void calcHours(){};
+    public void calcHours(){
+        int sum_h = 0;
+        for (ObservableClass single_class: classes){
+            sum_h += single_class.getNHours();
+        }
+    }
 
     /*
      * Used when a student duplicates this class
@@ -73,5 +65,17 @@ public class ObservableUE extends UE {
      * outputs: void
      * */
     public void notifyObserver(){
+    }
+
+    /* TESTING
+     * Modifies params for testing
+     *
+     * inputs: void
+     * outputs: void
+     * */
+    public void testSetParam2(){
+        nhours = 47;
+        classes.add(new ObservableClass("SA4T", "1E0101"));
+        classes.add(new ObservableClass("SA4L", "1E0102"));
     }
 }

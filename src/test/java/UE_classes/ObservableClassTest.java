@@ -60,6 +60,13 @@ public class ObservableClassTest {
         Assert.assertEquals(class1.getID(), SA4T.getObservers().get(0).getID());
         Assert.assertEquals(10, class1.getNHours());
         Assert.assertNotSame(10, class2.getNHours());
+
+        SA4T.setNHours(8);
+        SA4T.duplicate(class1.getOwner(), class1.getID());
+        Assert.assertEquals(2, SA4T.getObservers().size());
+        Assert.assertEquals(8, class1.getNHours());
+        Assert.assertNotSame(8, class2.getNHours());
+        Assert.assertNotSame(8, class3.getNHours());
     }
 
     @Test
