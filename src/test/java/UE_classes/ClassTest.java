@@ -1,7 +1,10 @@
 package UE_classes;
 
+import People_side.Teacher;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -34,6 +37,13 @@ public class ClassTest {
 
     @Test
     public void getTeachers() {
-        //Assert.assertTrue(false);
+        SA4T.testSetParam();
+        Map<String, Teacher> teacher_list = SA4T.getTeachers();
+        Teacher prof1 = teacher_list.get("1");
+        Assert.assertEquals("Sebastien Combefis", prof1.getName());
+        //Assert.assertEquals("1", prof1.getID());
+        Teacher prof2 = teacher_list.get("2");
+        Assert.assertEquals("Quentin Lurkin", prof2.getName());
+        //Assert.assertEquals("2", prof2.getID());
     }
 }
