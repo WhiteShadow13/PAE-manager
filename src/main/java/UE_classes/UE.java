@@ -1,8 +1,8 @@
 package UE_classes;
 
 public class UE {
-    private final String name;
-    private final String code;
+    private String name;
+    private String code;
     private int nhours;
     private int credits;
     private String info_sheet;

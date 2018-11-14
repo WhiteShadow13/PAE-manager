@@ -1,5 +1,7 @@
 package UE_classes;
 
+import ECAM_side.ECAM;
+import People_side.Student;
 import People_side.Teacher;
 
 import java.util.ArrayList;
@@ -20,7 +22,9 @@ public class ObservableClass extends Class {
      * inputs: int
      * outputs: void
      * */
-    public void setNHours(int hours){}
+    public void setNHours(int hours){
+        this.nhours = hours;
+    }
 
     /*
      * Adds a teacher to the teacher list
@@ -28,31 +32,57 @@ public class ObservableClass extends Class {
      * inputs: People_side.Teacher
      * outputs: void
      * */
-    public void addTeacher(Teacher teacher){}
+    public void addTeacher(Teacher teacher){
+        this.teachers.put(teacher.getID(), teacher);
+    }
 
     /*
      * Deletes a teacher from the teacher list
      *
-     * inputs: int (mapped ID)
+     * inputs: int (mapped id)
      * outputs: void
      * */
-    public void delTeacher(int ID){}
+    public void delTeacher(int id){
+        this.teachers.remove(id);
+    }
+
+    /*
+     * Fetch an ObserverClass through its id
+     *
+     * inputs: int (mapped id)
+     * outputs: ObserverClass
+     * */
+    public ObserverClass fetchObserver(String owner, int class_id){
+        Student student = ECAM.getInstance().getStudent(owner);
+
+        //NOT YET IMPLEMENTED
+        return new ObserverClass("NOT", "YET", "IMPLEMENTED");
+    }
 
     /*
      * Used when a student duplicates the parent UE
-     * and puts it in his program. Will update this class
+     * and puts it in his program. Will update this class and add
+     * the ObservableClass to the observer list
      *
      * !Allows the observer to trigger an update instead of having!
      * !to wait for the observable to trigger one                 !
      *
-     * ->Simply notifyObservers for now
-     * -->V.2: update specific Observable only
+     * ->update specific Observable only
      *
      * inputs: int (mapped ID)
      * outputs: void
      * */
-    public void duplicate(){
-        this.notifyObservers();
+    public void duplicate(String owner, int id){
+        for (ObserverClass elem: observers) {
+            if (id == elem.getID()) {
+                elem.update(this.getNHours());
+                return;
+            }
+        }
+
+        ObserverClass obs = this.fetchObserver(owner, id);
+        this.observers.add(obs);
+        obs.update(this.getNHours());
     }
 
     /*
@@ -61,9 +91,12 @@ public class ObservableClass extends Class {
      * inputs: void
      * outputs: void
      * */
-    public void notifyObservers(){}
+    public void notifyObservers(){
+        for (ObserverClass observer: observers) {
+            observer.update(nhours);
+        }
+    }
 
-    /* TESTING
     /* TESTING
      * Getter necessary for testing
      *

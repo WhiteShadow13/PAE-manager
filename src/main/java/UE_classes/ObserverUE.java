@@ -7,6 +7,7 @@ import java.util.List;
 
 public class ObserverUE extends UE {
     private Boolean validated;
+    private String owner;
     private Boolean accept_status;
     private List<ObserverClass> classes;
 
@@ -62,7 +63,7 @@ public class ObserverUE extends UE {
      * */
     public Boolean testValidate(){return this.validated;}
 
-    /*
+    /* TESTING
      * Modifies params for testing
      *
      * inputs: void
@@ -70,6 +71,6 @@ public class ObserverUE extends UE {
      * */
     public void testSetParam(){
         this.accept_status = true;
-        this.classes.add(new ObserverClass("SA4L", "1E0101"));
+        this.classes.add(new ObserverClass("SA4L", "1E0101", "13152"));
     }
 }

@@ -1,8 +1,8 @@
 package People_side;
 
 public class Human {
-    private final String name;
-    private final String lastname;
+    private String name;
+    private String lastname;
 
     public Human(String name, String lastname){
         this.name = name;

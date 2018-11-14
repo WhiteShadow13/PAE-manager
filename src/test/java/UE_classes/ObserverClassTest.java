@@ -6,7 +6,20 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ObserverClassTest {
-    ObserverClass SA4T = new ObserverClass("SA4T", "1E0101");
+    ObserverClass SA4T = new ObserverClass("SA4T", "1E0101", "13152");
+    ObserverClass SA4L = new ObserverClass("SA4L", "1E0102", "13152");
+
+    @Test
+    public void getID() {
+        int id1 = SA4T.getID();
+        int id2 = SA4L.getID();
+        Assert.assertNotSame(id1, id2);
+    }
+
+    @Test
+    public void getOwner() {
+        Assert.assertEquals("13152", SA4T.getOwner());
+    }
 
     @Test
     public void validate() {

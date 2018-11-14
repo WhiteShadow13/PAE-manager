@@ -37,13 +37,13 @@ public class ClassTest {
 
     @Test
     public void getTeachers() {
-        SA4T.testSetParam();
-        Map<String, Teacher> teacher_list = SA4T.getTeachers();
-        Teacher prof1 = teacher_list.get("1");
+        int cbf_id =SA4T.testSetParam();
+        Map<Integer, Teacher> teacher_list = SA4T.getTeachers();
+        Teacher prof1 = teacher_list.get(cbf_id);
         Assert.assertEquals("Sebastien Combefis", prof1.getName());
-        //Assert.assertEquals("1", prof1.getID());
-        Teacher prof2 = teacher_list.get("2");
+        Assert.assertEquals(cbf_id, prof1.getID());
+        Teacher prof2 = teacher_list.get(cbf_id + 1);
         Assert.assertEquals("Quentin Lurkin", prof2.getName());
-        //Assert.assertEquals("2", prof2.getID());
+        Assert.assertEquals(cbf_id + 1, prof2.getID());
     }
 }

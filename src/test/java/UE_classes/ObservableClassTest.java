@@ -5,17 +5,20 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
 public class ObservableClassTest {
     ObservableClass SA4T = new ObservableClass("SA4T", "1E0101");
-    Teacher cbf = new Teacher("Sebastien", "Combefis", 1);
-    Teacher lrk = new Teacher("Quentin", "Lurkin", 2);
+    Teacher cbf = new Teacher("Sebastien", "Combefis");
+    Teacher lrk = new Teacher("Quentin", "Lurkin");
 
-    ObserverClass class1 = new ObserverClass("SA4T", "1E0101");
-    ObserverClass class2 = new ObserverClass("SA4L", "1E0102");
+    ObserverClass class1 = new ObserverClass("SA4T", "1E0101", "13152");
+    ObserverClass class2 = new ObserverClass("SA4L", "1E0102", "13152");
+    ObserverClass class3 = new ObserverClass("SA4X", "1E0103", "13152");
 
 
     @Test
@@ -27,35 +30,46 @@ public class ObservableClassTest {
 
     @Test
     public void addTeacher() {
-        List<ObserverClass> observers = SA4T.getObservers();
-        Assert.assertTrue(observers.isEmpty());
+        Map<Integer, Teacher> teachers = SA4T.getTeachers();
+        Assert.assertTrue(teachers.isEmpty());
         SA4T.addTeacher(cbf);
-        Assert.assertFalse(observers.isEmpty());
+        Assert.assertFalse(teachers.isEmpty());
         SA4T.addTeacher(lrk);
-        Assert.assertEquals(2, observers.size());
-        Assert.assertEquals(cbf, observers.get(0));
-        Assert.assertEquals(lrk, observers.get(1));
+        Assert.assertEquals(2, teachers.size());
+        Assert.assertEquals(cbf, teachers.get(cbf.getID()));
+        Assert.assertEquals(lrk, teachers.get(lrk.getID()));
     }
 
     @Test
     public void delTeacher() {
-        List<ObserverClass> observers = SA4T.getObservers();
+        Map<Integer, Teacher> teachers = SA4T.getTeachers();
+        Assert.assertTrue(teachers.isEmpty());
         SA4T.addTeacher(cbf);
         SA4T.addTeacher(lrk);
-        Assert.assertEquals(2, observers.size());
-        SA4T.delTeacher(1);
-        Assert.assertEquals(1, observers.size());
-        Assert.assertEquals(lrk, observers.get(0));
+        Assert.assertEquals(2, teachers.size());
+        SA4T.delTeacher(cbf.getID());
+        Assert.assertEquals(1, teachers.size());
+        Assert.assertEquals(lrk, teachers.get(lrk.getID()));
     }
 
     @Test
     public void duplicate() {
-        List<ObserverClass> obser = new ArrayList<ObserverClass>();
         Assert.assertTrue(SA4T.getObservers().isEmpty());
-        SA4T.duplicate();
+        SA4T.duplicate(class1.getOwner(), class1.getID());
+        Assert.assertFalse(SA4T.getObservers().isEmpty());
+        Assert.assertEquals(class1.getID(), SA4T.getObservers().get(0).getID());
+        Assert.assertEquals(10, class1.getNHours());
+        Assert.assertNotSame(10, class2.getNHours());
     }
 
     @Test
     public void notifyObservers() {
+        SA4T.duplicate(class1.getOwner(), class1.getID());
+        SA4T.duplicate(class2.getOwner(), class2.getID());
+        SA4T.setNHours(9);
+        SA4T.notifyObservers();
+        Assert.assertEquals(9, class1.getNHours());
+        Assert.assertEquals(9, class2.getNHours());
+        Assert.assertNotSame(9, class3.getNHours());
     }
 }

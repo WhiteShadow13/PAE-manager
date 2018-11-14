@@ -6,15 +6,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Class {
-    final private String name;
-    final private String code;
+    private String name;
+    private String code;
     protected int nhours;
-    private Map<String, Teacher> teachers;
+    protected Map<Integer, Teacher> teachers;
 
     public Class(String name, String code){
         this.name = name;
         this.code = code;
-        this.teachers = new HashMap<String, Teacher>();
+        this.teachers = new HashMap<Integer, Teacher>();
     }
 
     /*
@@ -55,19 +55,20 @@ public class Class {
      * inputs: void
      * outputs: HashMap<String, Teacher>
      * */
-    public Map<String, Teacher> getTeachers(){ return this.teachers; }
+    public Map<Integer, Teacher> getTeachers(){ return this.teachers; }
 
     /*
      * Setter method for unit test
      *
      * inputs: void
-     * outputs: void
+     * outputs: int
      * */
-    public void testSetParam(){
+    public int testSetParam(){
         this.nhours = 10;
-        Teacher cbf = new Teacher("Sebastien", "Combefis", 1);
-        Teacher lrk = new Teacher("Quentin", "Lurkin", 2);
-        this.teachers.put("1", cbf);
-        this.teachers.put("2", lrk);
+        Teacher cbf = new Teacher("Sebastien", "Combefis");
+        Teacher lrk = new Teacher("Quentin", "Lurkin");
+        this.teachers.put(cbf.getID(), cbf);
+        this.teachers.put(lrk.getID(), lrk);
+        return cbf.getID();
     }
 }

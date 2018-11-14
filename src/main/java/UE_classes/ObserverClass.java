@@ -3,11 +3,37 @@ package UE_classes;
 import UE_classes.Class;
 
 public class ObserverClass extends Class {
+    private int id;
+    private static int amount;
+    private String owner;
     private Boolean validated;
 
-    public ObserverClass(String name, String code){
+    public ObserverClass(String name, String code, String owner){
         super(name, code);
+        this.id = ++amount;
+        this.owner = owner;
         this.validated = false;
+    }
+
+    /*
+     * Getter for static id, no two observervers
+     * have the same id.
+     *
+     * input: void
+     * output: int
+     * */
+    public int getID() {
+        return id;
+    }
+
+    /*
+     * Getter for owner (matricule)
+     *
+     * input: void
+     * output: String
+     * */
+    public String getOwner() {
+        return owner;
     }
 
     /*
@@ -18,10 +44,10 @@ public class ObserverClass extends Class {
      * outputs: void
      * */
     public void validate(){
-        if (this.validated){
-            this.validated = false;
+        if (validated){
+            validated = false;
         } else {
-            this.validated = true;
+            validated = true;
         }
     }
 
@@ -42,5 +68,5 @@ public class ObserverClass extends Class {
      * inputs: void
      * outputs: Boolean
      * */
-    public Boolean getValidate(){ return this.validated; }
+    public Boolean getValidate(){ return validated; }
 }

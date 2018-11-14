@@ -5,13 +5,14 @@ import java.util.Date;
 import java.util.List;
 
 public class Teacher extends Human {
-    final private int ID;
+    private int ID;
+    private static int amount;
     private List<Date> schedule;
     private String background;
 
-    public Teacher(String name, String lastname, int ID){
+    public Teacher(String name, String lastname){
         super(name, lastname);
-        this.ID = ID;
+        this.ID = ++amount;
         this.schedule = new ArrayList<Date>();
         this.background = "Maths";
     }
@@ -22,7 +23,9 @@ public class Teacher extends Human {
      * inputs: void
      * outputs: int
      * */
-    public void getID(){}
+    public int getID(){
+        return ID;
+    }
 
     /*
      * Getter for schedule

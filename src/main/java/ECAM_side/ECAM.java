@@ -7,15 +7,15 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class ECAM {
-    private ECAM instance;
+    private static ECAM instance = new ECAM();
     private Map<String, Orientation> orientations;
     private Map<Integer, Teacher> teachers;
-    private Map<Integer, Student> students;
+    private Map<String, Student> students;
 
     private ECAM(){
         this.orientations = new HashMap<String, Orientation>();
         this.teachers = new HashMap<Integer, Teacher>();
-        this.students = new HashMap<Integer, Student>();
+        this.students = new HashMap<String, Student>();
     }
 
     /*
@@ -24,7 +24,9 @@ public class ECAM {
      * inputs: void
      * outputs: ECAM_side.ECAM
      * */
-    public void getInstance(){}
+    public static ECAM getInstance(){
+        return instance;
+    }
 
     /*
      * Get specific orientation, orientations will be:
@@ -49,6 +51,16 @@ public class ECAM {
      * outputs: void
      * */
     public void addTeacher(){}
+
+    /*
+     * Gets a specific student though its id
+     *
+     * input: String
+     * output: Student
+     * */
+    public Student getStudent(String matricule){
+        return students.get(matricule);
+    }
 
     /*
      * Adds a student to student list
