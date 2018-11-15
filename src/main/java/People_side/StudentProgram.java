@@ -2,6 +2,7 @@ package People_side;
 
 import UE_classes.ObserverUE;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +27,7 @@ public class StudentProgram {
      * outputs: List<ObserverUE>
      * */
     public List<ObserverUE> getContents(){
-        return new ObserverUE("", "", "");
+        return new ArrayList<ObserverUE>();
     }
 
     /*
