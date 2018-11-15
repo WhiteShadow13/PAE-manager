@@ -1,7 +1,11 @@
 language: java
 sudo: false # faster builds
 
-script: "mvn cobertura:cobertura -Dcobertura.report.format=xml"
+script:
+  "mvn clean"
+  "mvn compile"
+  "mvn verify"
+  "mvn cobertura:cobertura -Dcobertura.report.format=xml"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

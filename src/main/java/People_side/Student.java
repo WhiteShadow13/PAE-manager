@@ -31,6 +31,14 @@ public class Student extends Human {
     public Boolean getStatus(String code){return false;}
 
     /*
+     * Getter for last StudentProgram
+     *
+     * inputs: void
+     * outputs: StudentProgram (last program)
+     * */
+    public StudentProgram getProgram() {return program.get(program.size() - 1);}
+
+    /*
      * Gets the total amount of credits for the
      * student's current program
      *

@@ -3,19 +3,20 @@ package People_side;
 import UE_classes.ObserverUE;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class StudentProgram {
     private final String year;
     private final String academic_year;
     private int ncredits;
-    private Map<String, ObserverUE> content;
+    private Map<Integer, ObserverUE> content;
 
     public StudentProgram(String year, String acyear, int cred) {
         this.year = year;
         this.academic_year = acyear;
         this.ncredits = cred;
-        this.content = new HashMap<String, ObserverUE>();
+        this.content = new HashMap<Integer, ObserverUE>();
     }
 
     /*
@@ -64,4 +65,12 @@ public class StudentProgram {
      * outputs: int
      * */
     public void calcValidCredits(){}
+
+    /*
+     * Get a list of all UEs of the program
+     *
+     * inputs: void
+     * outputs: List<UE>
+     * */
+    public Map<Integer, ObserverUE> getUES() {return content;}
 }

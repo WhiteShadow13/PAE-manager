@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 public class ObserverUETest {
     ObserverUE DD4L = new ObserverUE("DD4L", "1E4014", "13152");
+    ObserverUE DD4X = new ObserverUE("DD4X", "1E4015", "13152");
 
     @Test
     public void validate() {
@@ -18,12 +19,12 @@ public class ObserverUETest {
 
     @Test
     public void getId() {
-        //Assert.assertFalse(true);
+        Assert.assertNotSame(DD4L.getId(), DD4X.getId());
     }
 
     @Test
     public void getOwner() {
-        //Assert.assertFalse(true);
+        Assert.assertEquals("13152", DD4L.getOwner());
     }
 
     @Test

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObservableUE extends UE {
-    private int nhours;
     private List<ObserverUE> observers;
     private List<ObservableClass> classes;
 
@@ -44,6 +43,7 @@ public class ObservableUE extends UE {
         for (ObservableClass single_class: classes){
             sum_h += single_class.getNHours();
         }
+        setHours(sum_h);
     }
 
     /*
@@ -53,10 +53,20 @@ public class ObservableUE extends UE {
      *
      * -> simply notitifyObserver for now
      *
-     * inputs: void
+     * inputs: ObservableUE
      * outputs: void
      * */
-    public void duplicate(){}
+    public void duplicate(ObserverUE single_ue){
+        for (ObserverUE ue: observers){
+            if (single_ue.getId() == ue.getId()){
+                single_ue.update(getCredits(), getHours(), getInfoSheet());
+                return;
+            }
+        }
+
+        observers.add(single_ue);
+        single_ue.update(getCredits(), getHours(), getInfoSheet());
+    }
 
     /*
      * Goes through all the observers and updates them
@@ -64,7 +74,10 @@ public class ObservableUE extends UE {
      * inputs: void
      * outputs: void
      * */
-    public void notifyObserver(){
+    public void notifyObservers(){
+        for (ObserverUE ue: observers){
+            ue.update(getCredits(), getHours(), getInfoSheet());
+        }
     }
 
     /* TESTING
@@ -74,7 +87,7 @@ public class ObservableUE extends UE {
      * outputs: void
      * */
     public void testSetParam2(){
-        nhours = 47;
+        setHours(47);
         classes.add(new ObservableClass("SA4T", "1E0101"));
         classes.add(new ObservableClass("SA4L", "1E0102"));
     }

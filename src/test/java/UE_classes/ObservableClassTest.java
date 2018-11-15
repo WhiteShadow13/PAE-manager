@@ -54,29 +54,29 @@ public class ObservableClassTest {
 
     @Test
     public void duplicate() {
-        /*Assert.assertTrue(SA4T.getObservers().isEmpty());
-        SA4T.duplicate(class1.getOwner(), class1.getID());
+        Assert.assertTrue(SA4T.getObservers().isEmpty());
+        SA4T.duplicate(class1);
         Assert.assertFalse(SA4T.getObservers().isEmpty());
         Assert.assertEquals(class1.getID(), SA4T.getObservers().get(0).getID());
         Assert.assertEquals(10, class1.getNHours());
         Assert.assertNotSame(10, class2.getNHours());
 
         SA4T.setNHours(8);
-        SA4T.duplicate(class1.getOwner(), class1.getID());
-        Assert.assertEquals(2, SA4T.getObservers().size());
+        SA4T.duplicate(class1);
+        Assert.assertEquals(1, SA4T.getObservers().size());
         Assert.assertEquals(8, class1.getNHours());
         Assert.assertNotSame(8, class2.getNHours());
-        Assert.assertNotSame(8, class3.getNHours());*/
+        Assert.assertNotSame(8, class3.getNHours());
     }
 
     @Test
     public void notifyObservers() {
-        /*SA4T.duplicate(class1.getOwner(), class1.getID());
-        SA4T.duplicate(class2.getOwner(), class2.getID());
+        SA4T.duplicate(class1);
+        SA4T.duplicate(class2);
         SA4T.setNHours(9);
         SA4T.notifyObservers();
         Assert.assertEquals(9, class1.getNHours());
         Assert.assertEquals(9, class2.getNHours());
-        Assert.assertNotSame(9, class3.getNHours());*/
+        Assert.assertNotSame(9, class3.getNHours());
     }
 }

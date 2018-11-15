@@ -5,7 +5,9 @@ import People_side.Student;
 import People_side.Teacher;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ObservableClass extends Class {
     private List<ObserverClass> observers;
@@ -23,7 +25,7 @@ public class ObservableClass extends Class {
      * outputs: void
      * */
     public void setNHours(int hours){
-        this.nhours = hours;
+        nhours = hours;
     }
 
     /*
@@ -33,7 +35,7 @@ public class ObservableClass extends Class {
      * outputs: void
      * */
     public void addTeacher(Teacher teacher){
-        this.teachers.put(teacher.getID(), teacher);
+        teachers.put(teacher.getID(), teacher);
     }
 
     /*
@@ -43,20 +45,7 @@ public class ObservableClass extends Class {
      * outputs: void
      * */
     public void delTeacher(int id){
-        this.teachers.remove(id);
-    }
-
-    /*
-     * Fetch an ObserverClass through its id
-     *
-     * inputs: int (mapped id)
-     * outputs: ObserverClass
-     * */
-    public ObserverClass fetchObserver(String owner, int class_id){
-        Student student = ECAM.getInstance().getStudent(owner);
-
-        //NOT YET IMPLEMENTED
-        return new ObserverClass("NOT", "YET", "IMPLEMENTED");
+        teachers.remove(id);
     }
 
     /*
@@ -72,17 +61,16 @@ public class ObservableClass extends Class {
      * inputs: int (mapped ID)
      * outputs: void
      * */
-    public void duplicate(String owner, int id){
+    public void duplicate(ObserverClass single_class){
         for (ObserverClass elem: observers) {
-            if (id == elem.getID()) {
-                elem.update(this.getNHours());
+            if (single_class.getID() == elem.getID()) {
+                elem.update(getNHours());
                 return;
             }
         }
 
-        ObserverClass obs = this.fetchObserver(owner, id);
-        this.observers.add(obs);
-        obs.update(this.getNHours());
+        observers.add(single_class);
+        single_class.update(getNHours());
     }
 
     /*
@@ -103,5 +91,5 @@ public class ObservableClass extends Class {
      * inputs: void
      * outputs: List<ObserverClass>
      * */
-    public List<ObserverClass> getObservers(){ return this.observers; }
+    public List<ObserverClass> getObservers(){ return observers; }
 }
