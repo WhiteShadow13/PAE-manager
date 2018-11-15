@@ -23,9 +23,11 @@ public class StudentProgram {
      * Getter for content List
      *
      * inputs: void
-     * outputs: List<UE_classes.UE>
+     * outputs: List<ObserverUE>
      * */
-    public void getContents(){}
+    public List<ObserverUE> getContents(){
+        return new ObserverUE("", "", "");
+    }
 
     /*
      * Add content to content list thanks to
