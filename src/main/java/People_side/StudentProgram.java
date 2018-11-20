@@ -13,10 +13,10 @@ public class StudentProgram {
     private int ncredits;
     private Map<Integer, ObserverUE> content;
 
-    public StudentProgram(String year, String acyear, int cred) {
+    public StudentProgram(String year, String acyear) {
         this.year = year;
         this.academic_year = acyear;
-        this.ncredits = cred;
+        this.ncredits = 0;
         this.content = new HashMap<Integer, ObserverUE>();
     }
 
@@ -39,7 +39,7 @@ public class StudentProgram {
      * inputs: string, string (year, code)
      * outputs: void
      * */
-    public void addContent(){}
+    public void addContent(String year, String code){}
 
     /*
      * Deletes content from the list after

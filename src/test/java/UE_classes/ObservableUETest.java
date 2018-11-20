@@ -3,11 +3,8 @@ package UE_classes;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class ObservableUETest {
     ObservableUE DD4L = new ObservableUE("DD4L", "1E4014");
