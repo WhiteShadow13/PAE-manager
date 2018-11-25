@@ -1,13 +1,18 @@
 package ECAM_side;
 
 public class Orientation {
+    private String name;
     private Program bachelor;
     private Program master;
 
-    public Orientation(Program bachelor, Program master){
+
+    public Orientation(String name, Program bachelor, Program master){
         this.bachelor = bachelor;
         this.master = master;
+        this.name = name;
     }
+
+    public String getName(){return name;}
 
     /*
      * Getter for bachelor
@@ -15,7 +20,7 @@ public class Orientation {
      * inputs: void
      * outputs: ECAM_side.Program
      * */
-    public void getBachelor(){}
+    public Program getBachelor(){return bachelor;}
 
     /*
      * Getter for master
@@ -23,5 +28,5 @@ public class Orientation {
      * inputs: void
      * outputs: ECAM_side.Program
      * */
-    public void getMaster(){}
+    public Program getMaster(){return master;}
 }

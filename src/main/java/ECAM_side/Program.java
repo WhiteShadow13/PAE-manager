@@ -15,5 +15,9 @@ public class Program {
      * inputs: int (year)
      * outputs: ECAM_side.Bloc
      * */
-    public void getBloc(){}
+    public Bloc getBloc(int year){return years.get(year - 1);}
+
+    public void addBloc(Bloc bloc){
+        years.add(bloc);
+    }
 }

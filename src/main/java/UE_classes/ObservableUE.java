@@ -80,6 +80,10 @@ public class ObservableUE extends UE {
         }
     }
 
+    public void addClass(ObservableClass single_class){
+        classes.add(single_class);
+    }
+
     /* TESTING
      * Modifies params for testing
      *

@@ -1,10 +1,7 @@
 package UE_classes;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ObserverUETest {
     ObserverUE DD4L = new ObserverUE("DD4L", "1E4014", "13152");

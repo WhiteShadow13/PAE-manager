@@ -13,6 +13,14 @@ public class UE {
     }
 
     /*
+     * Getter for class code
+     *
+     * inputs: void
+     * outputs: String
+     * */
+    public String getName(){return name;}
+
+    /*
     * Getter for class code
     *
     * inputs: void

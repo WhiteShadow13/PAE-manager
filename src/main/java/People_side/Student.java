@@ -19,7 +19,7 @@ public class Student extends Human {
     * inputs: void
     * outputs: int
     * */
-    public int getID(){return 0;}
+    public int getID(){return matricule;}
 
     /*
      * Gives back the status of a class after
@@ -64,5 +64,8 @@ public class Student extends Human {
      * inputs: People_side.StudentProgram
      * outputs: void
      * */
-    public void newProgram(){}
+    public void newProgram(String year, String acyear){
+        StudentProgram sprg = new StudentProgram(year, acyear, Integer.toString(matricule));
+        program.add(sprg);
+    }
 }

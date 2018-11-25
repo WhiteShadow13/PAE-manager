@@ -10,12 +10,12 @@ public class ECAM {
     private static ECAM instance = new ECAM();
     private Map<String, Orientation> orientations;
     private Map<Integer, Teacher> teachers;
-    private Map<String, Student> students;
+    private Map<Integer, Student> students;
 
     private ECAM(){
         this.orientations = new HashMap<String, Orientation>();
         this.teachers = new HashMap<Integer, Teacher>();
-        this.students = new HashMap<String, Student>();
+        this.students = new HashMap<Integer, Student>();
     }
 
     /*
@@ -41,7 +41,9 @@ public class ECAM {
      * inputs: string (orientation code)
      * outputs: ECAM_side.Orientation
      * */
-    public void getOrientation(){}
+    public Orientation getOrientation(String code){
+        return orientations.get(code);
+    }
 
     /*
      * Adds a teacher to teacher map
@@ -69,5 +71,9 @@ public class ECAM {
      * inputs: People_side.Student
      * outputs: void
      * */
-    public void addStudent(){}
+    public void addStudent(Student std){students.put(std.getID(), std);}
+
+    public void addOrientation(String code, Orientation orn){
+        orientations.put(code, orn);
+    }
 }

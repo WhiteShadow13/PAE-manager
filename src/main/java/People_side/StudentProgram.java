@@ -1,23 +1,26 @@
 package People_side;
 
+import ECAM_side.Bloc;
+import ECAM_side.ECAM;
+import ECAM_side.Program;
+import UE_classes.ObservableUE;
 import UE_classes.ObserverUE;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StudentProgram {
     private final String year;
     private final String academic_year;
+    private final String owner;
     private int ncredits;
-    private Map<Integer, ObserverUE> content;
+    private Map<String, ObserverUE> content;
 
-    public StudentProgram(String year, String acyear) {
+    public StudentProgram(String year, String acyear, String owner) {
         this.year = year;
         this.academic_year = acyear;
+        this.owner = owner;
         this.ncredits = 0;
-        this.content = new HashMap<Integer, ObserverUE>();
+        this.content = new HashMap<String, ObserverUE>();
     }
 
     /*
@@ -26,8 +29,8 @@ public class StudentProgram {
      * inputs: void
      * outputs: List<ObserverUE>
      * */
-    public List<ObserverUE> getContents(){
-        return new ArrayList<ObserverUE>();
+    public Map<String, ObserverUE> getContents(){
+        return content;
     }
 
     /*
@@ -39,7 +42,23 @@ public class StudentProgram {
      * inputs: string, string (year, code)
      * outputs: void
      * */
-    public void addContent(String year, String code){}
+    public void addContent(String year, String code){
+        ECAM ecam = ECAM.getInstance();
+        int int_year = Integer.parseInt(year.substring(0, 1));
+        String orientation =  year.substring(1);
+
+        ObservableUE ue = new ObservableUE("", "");
+        if (int_year <= 3) {
+            ue = ecam.getOrientation(orientation).getBachelor().getBloc(int_year).getContent(code);
+        } else {
+            int_year = int_year - 3;
+            ue = ecam.getOrientation(orientation).getMaster().getBloc(int_year).getContent(code);
+        }
+        ObserverUE obs_ue = new ObserverUE(ue.getName(), code, owner);
+        ue.duplicate(obs_ue);
+
+        content.put(obs_ue.getName(), obs_ue);
+    }
 
     /*
      * Deletes content from the list after
@@ -58,7 +77,26 @@ public class StudentProgram {
      * inputs: void
      * outputs: int
      * */
-    public void calcCredits(){}
+    public int calcCredits(){
+        int creds = 0;
+        Iterator it = content.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry)it.next();
+            ObserverUE obs_ue = (ObserverUE)pair.getValue();
+            creds += obs_ue.getCredits();
+        }
+        return creds;
+    }
+
+    /*
+     * Calculates the total amount of hours
+     * for a year by going through all the
+     * program content and summing hours
+     *
+     * inputs: void
+     * outputs: int
+     * */
+    public int calcHours(){return 0;}
 
     /*
      * Calculates the total amount of valid
@@ -67,7 +105,7 @@ public class StudentProgram {
      * inputs: void
      * outputs: int
      * */
-    public void calcValidCredits(){}
+    public int calcValidCredits(){return 0;}
 
     /*
      * Get a list of all UEs of the program
@@ -75,5 +113,5 @@ public class StudentProgram {
      * inputs: void
      * outputs: List<UE>
      * */
-    public Map<Integer, ObserverUE> getUES() {return content;}
+    public Map<String, ObserverUE> getUES() {return content;}
 }
