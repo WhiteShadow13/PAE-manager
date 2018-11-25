@@ -76,3 +76,9 @@ soit pour les tests. Il y a eu aussi quelques gros changements du coté Observer 
 en tout et pour tout la structure du diagramme de classes reste correcte et reste
 suffisant pour avoir une idée de comment le code fontionne.
 
+IV. liens utiles
+
+Github: https://github.com/benjvdb9/PAE-manager
+Jenkins: https://jenkins.ecam.be/job/PAE-manager/job/PAE/
+Specifications: https://docs.google.com/document/d/1WIN8Yr4fJRLfjARc1CfKGVpqpfs5jMg1zA1cRwx_xwE/edit?fbclid=IwAR0AP6-hjbMiZWAbym5RtC9vRsV5VjgHg38pyAnajOwjwdeL4lOcy1Vz2DI
+Facebook: https://www.facebook.com/groups/2086982478298025/?ref=bookmarks
