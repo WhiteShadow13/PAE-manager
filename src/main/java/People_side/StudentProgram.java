@@ -57,7 +57,7 @@ public class StudentProgram {
         ObserverUE obs_ue = new ObserverUE(ue.getName(), code, owner);
         ue.duplicate(obs_ue);
 
-        content.put(obs_ue.getName(), obs_ue);
+        content.put(obs_ue.getCode(), obs_ue);
     }
 
     /*
@@ -96,7 +96,13 @@ public class StudentProgram {
      * inputs: void
      * outputs: int
      * */
-    public int calcHours(){return 0;}
+    public int calcHours(){
+        int hours = 0;
+        for(ObserverUE obs_ue: content.values()){
+            hours += obs_ue.getHours();
+        }
+        return hours;
+    }
 
     /*
      * Calculates the total amount of valid
@@ -105,7 +111,32 @@ public class StudentProgram {
      * inputs: void
      * outputs: int
      * */
-    public int calcValidCredits(){return 0;}
+    public int calcValidCredits(){
+        int v_creds = 0;
+        for(ObserverUE obs_ue: content.values()){
+            if (obs_ue.getValidated()){
+                v_creds += obs_ue.getCredits();
+            }
+        }
+        return v_creds;
+    }
+
+    /*
+     * Get a specific UEs of the program
+     *
+     * inputs: String
+     * outputs: ObserverUE
+     * */
+    public ObserverUE getSpecificUE(String code) {
+        Iterator it = content.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry)it.next();
+            if (pair.getKey().equals(code)){
+                return (ObserverUE)pair.getValue();
+            }
+        }
+        return null;
+    }
 
     /*
      * Get a list of all UEs of the program

@@ -26,8 +26,10 @@ public class Main {
 
         ObservableUE ue1 = new ObservableUE("DD", "SA");
         ue1.setCredits(99);
+        ue1.setHours(90);
         ObservableUE ue2 = new ObservableUE("DX", "SX");
         ue2.setCredits(2);
+        ue2.setHours(9);
 
         ue1.addClass(class1);
         ue2.addClass(class2);
@@ -50,7 +52,7 @@ public class Main {
         ecam.addOrientation(MIN.getName(), MIN);
         //END INITIALIZE ECAM
 
-        boolean testing = true;
+        boolean testing = false;
         while (testing) {
             String fname = "Benjamin";
             String lname = "Vandenbussche";
@@ -60,7 +62,15 @@ public class Main {
             std.getProgram().addContent("4MIN", "SA");
             std.getProgram().addContent("4MIN", "SX");
             int test = std.getProgram().calcCredits();
-            System.out.println(test);
+            System.out.println(String.format("Credits: %d", test));
+            int test2 = std.getProgram().calcHours();
+            System.out.println(String.format("Hours: %d", test2));
+            int test3 = std.getProgram().calcValidCredits();
+            System.out.println(String.format("Validated Credits: %d", test3));
+            ObserverUE obs = std.getProgram().getSpecificUE("SA");
+            obs.validate();
+            int test4 = std.getProgram().calcValidCredits();
+            System.out.println(String.format("Validated Credits: %d", test4));
             testing = false;
         }
 
