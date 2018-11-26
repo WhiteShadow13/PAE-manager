@@ -3,6 +3,7 @@ package UE_classes;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -67,5 +68,15 @@ public class ObservableUETest {
         Assert.assertEquals(9, ue1.getCredits());
         Assert.assertEquals(9, ue2.getCredits());
         Assert.assertNotSame(9, ue3.getCredits());
+    }
+
+    @Test
+    public void addClass() {
+        List<ObservableClass> class_list = new ArrayList<ObservableClass>();
+        Assert.assertEquals(class_list, DD4L.getClasses());
+        DD4L.testSetParam2();
+        Assert.assertEquals(DD4L.getClasses().size(), 2);
+        DD4L.addClass(new ObservableClass("SA4X", "1E0103"));
+        Assert.assertEquals(DD4L.getClasses().size(), 3);
     }
 }

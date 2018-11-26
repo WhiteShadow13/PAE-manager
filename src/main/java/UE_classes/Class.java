@@ -53,12 +53,12 @@ public class Class {
      * Getter for teacher list
      *
      * inputs: void
-     * outputs: HashMap<String, Teacher>
+     * outputs: HashMap<Integer, Teacher>
      * */
     public Map<Integer, Teacher> getTeachers(){ return this.teachers; }
 
-    /*
-     * Setter method for unit test
+    /* TESTING
+     * Necessary for testing
      *
      * inputs: void
      * outputs: int

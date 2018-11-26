@@ -62,7 +62,7 @@ public class ObserverClass extends Class {
         this.setNHours(hours);
     }
 
-    /*
+    /* TESTING
      * Necessary for unit tests
      *
      * inputs: void

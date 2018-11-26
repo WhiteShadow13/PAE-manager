@@ -9,6 +9,12 @@ public class UETest {
     private UE DD4L = new UE("DD4L", "1E4014");
 
     @Test
+    public void getName() {
+        String name = DD4L.getName();
+        Assert.assertEquals("DD4L", name);
+    }
+
+    @Test
     public void getCode() {
         String code = DD4L.getCode();
         Assert.assertEquals("1E4014", code);

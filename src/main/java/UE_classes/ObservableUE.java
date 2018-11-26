@@ -32,7 +32,7 @@ public class ObservableUE extends UE {
     public List<ObservableClass> getClasses() {return classes;}
 
     /*
-     * Calculates total hours from UE_classes.UE classes and
+     * Calculates total hours from UE classes and
      * modifies nhours
      *
      * inputs: void
@@ -50,8 +50,6 @@ public class ObservableUE extends UE {
      * Used when a student duplicates this class
      * and puts it in his program. Will update his instance
      * and all his class children classes
-     *
-     * -> simply notitifyObserver for now
      *
      * inputs: ObservableUE
      * outputs: void

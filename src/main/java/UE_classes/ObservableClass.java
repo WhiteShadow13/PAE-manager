@@ -31,7 +31,7 @@ public class ObservableClass extends Class {
     /*
      * Adds a teacher to the teacher list
      *
-     * inputs: People_side.Teacher
+     * inputs: Teacher
      * outputs: void
      * */
     public void addTeacher(Teacher teacher){

@@ -79,7 +79,7 @@ public class UE {
      * */
     public String getInfoSheet(){ return info_sheet; }
 
-    /*
+    /* TESTING
      * Used in unit tests to modify private params
      *
      * inputs: void
