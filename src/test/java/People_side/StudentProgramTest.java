@@ -1,54 +1,86 @@
 package People_side;
 
+import ECAM_side.ECAM;
 import UE_classes.ObserverUE;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
 public class StudentProgramTest {
     StudentProgram prog2018 = new StudentProgram("4MA","2018", "13152");
-    ObserverUE ue1 = new ObserverUE("DD4L", "1E4014", "13152");
-    ObserverUE ue2 = new ObserverUE("DD4T", "1E4015", "13152");
-    ObserverUE ue3 = new ObserverUE("DD4X", "1E4016", "13152");
+
+    @Test
+    public void getAcYear() {
+        Assert.assertEquals(prog2018.getAcYear(), "2018");
+    }
 
     @Test
     public void getContents() {
-        /*List<ObserverUE> content = prog2018.getContents();
+        Map<String, ObserverUE> content = prog2018.getContents();
         Assert.assertTrue(content.isEmpty());
-        List<ObserverUE> obsr = Arrays.asList(ue1, ue2, ue3);
-        content.add(ue1);
-        content.add(ue2);
-        content.add(ue3);
-        Assert.assertEquals(obsr, content);*/
+        prog2018.testSetParam();
+        content = prog2018.getContents();
+        Assert.assertEquals(content.get("SA").getName(), "DD4L");
+        Assert.assertEquals(content.get("SX").getName(), "DD4X");
     }
 
     @Test
     public void addContent() {
-        /*List<ObserverUE> content = prog2018.getContents();
+        Map<String, ObserverUE> content = prog2018.getContents();
         Assert.assertTrue(content.isEmpty());
-        prog2018.addContent("4MIN", "DD4L");
-        Assert.assertEquals(ue1, prog2018.getContents().get(0));
-        prog2018.addContent("4MIN", "DD4L");
-        Assert.assertEquals(ue2, prog2018.getContents().get(1));*/
+        ECAM.getInstance().init();
+        prog2018.addContent("4MIN", "SA");
+        Assert.assertFalse(content.isEmpty());
+        Assert.assertEquals(prog2018.getUES().size(), 1);
+        Assert.assertEquals(prog2018.getUES().get("SA").getName(), "DD");
     }
 
     @Test
     public void delContent() {
+        ECAM.getInstance().init();
+        prog2018.addContent("4MIN", "SA");
+        prog2018.addContent("4MIN", "SX");
+        Assert.assertEquals(prog2018.getContents().size(), 2);
+        prog2018.delContent("SA");
+        Assert.assertEquals(prog2018.getContents().size(), 1);
+        Assert.assertEquals(prog2018.getContents().get("SX").getName(), "DX");
     }
 
     @Test
     public void calcCredits() {
+        prog2018.testSetParam();
+        Assert.assertEquals(prog2018.calcCredits(), 17);
+    }
+
+    @Test
+    public void calcHours() {
+        prog2018.testSetParam();
+        Assert.assertEquals(prog2018.calcHours(), 187);
     }
 
     @Test
     public void calcValidCredits() {
+        prog2018.testSetParam();
+        Assert.assertEquals(prog2018.calcValidCredits(), 8);
+    }
+
+    @Test
+    public void getSpecificUE() {
+        prog2018.addContent("4MIN", "SA");
+        prog2018.addContent("4MIN", "SX");
+        Assert.assertEquals(prog2018.getSpecificUE("SX").getName(), "DX");
     }
 
     @Test
     public void getUES() {
+        prog2018.addContent("4MIN", "SA");
+        prog2018.addContent("4MIN", "SX");
+        Assert.assertEquals(prog2018.getUES().size(), 2);
     }
 }

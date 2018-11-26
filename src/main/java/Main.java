@@ -52,8 +52,13 @@ public class Main {
         ecam.addOrientation(MIN.getName(), MIN);
         //END INITIALIZE ECAM
 
-        boolean testing = false;
-        while (testing) {
+        boolean testing;
+        if (args[0] == null){
+            testing = false;
+        } else {
+            testing = true;
+        }
+        if (testing) {
             String fname = "Benjamin";
             String lname = "Vandenbussche";
             String mat = "13152";
@@ -71,7 +76,6 @@ public class Main {
             obs.validate();
             int test4 = std.getProgram().calcValidCredits();
             System.out.println(String.format("Validated Credits: %d", test4));
-            testing = false;
         }
 
         Scanner sc = new Scanner(System.in);

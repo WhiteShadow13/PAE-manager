@@ -24,6 +24,16 @@ public class StudentProgram {
     }
 
     /*
+     * Getter for academic year
+     *
+     * inputs: void
+     * outputs: String
+     * */
+    public String getAcYear(){
+        return academic_year;
+    }
+
+    /*
      * Getter for content List
      *
      * inputs: void
@@ -67,7 +77,13 @@ public class StudentProgram {
      * inputs: string (code)
      * outputs: void
      * */
-    public void delContent(){}
+    public void delContent(String code){
+        for (String key: content.keySet()){
+            if (key.equals(code)){
+                content.remove(key);
+            }
+        }
+    }
 
     /*
      * Calculates the total amount of credits
@@ -145,4 +161,22 @@ public class StudentProgram {
      * outputs: List<UE>
      * */
     public Map<String, ObserverUE> getUES() {return content;}
+
+    /* TESTING
+     * Inserts UEs into content for testing
+     *
+     * inputs: void
+     * outputs: void
+     * */
+    public void testSetParam(){
+        ObserverUE ue1 = new ObserverUE("DD4L", "SA", "13152");
+        ue1.setCredits(9);
+        ue1.setHours(99);
+        ObserverUE ue2 = new ObserverUE("DD4X", "SX", "13152");
+        ue2.setCredits(8);
+        ue2.setHours(88);
+        ue2.validate();
+        content.put("SA", ue1);
+        content.put("SX", ue2);
+    }
 }

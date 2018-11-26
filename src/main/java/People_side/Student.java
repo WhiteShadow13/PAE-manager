@@ -14,11 +14,11 @@ public class Student extends Human {
     }
 
     /*
-    * Getter for matricule
-    *
-    * inputs: void
-    * outputs: int
-    * */
+     * Getter for matricule
+     *
+     * inputs: void
+     * outputs: int
+     * */
     public int getID(){return matricule;}
 
     /*
@@ -45,16 +45,34 @@ public class Student extends Human {
      * inputs: void
      * outputs: int
      * */
-    public void getCredits(){}
+    public int getCredits(){
+        StudentProgram prog = getProgram();
+        return prog.calcCredits();
+    }
+
+    /*
+     * Gets the total amount of hours for the
+     * student's current program
+     *
+     * inputs: void
+     * outputs: int
+     * */
+    public int getHours(){
+        StudentProgram prog = getProgram();
+        return prog.calcHours();
+    }
 
     /*
      * Gets the total amount of validated credits
      * for the student's current program
      *
-     * inputs:
-     * outputs:
+     * inputs: void
+     * outputs: void
      * */
-    public void getValidCredits(){}
+    public int getValidCredits(){
+        StudentProgram prog = getProgram();
+        return prog.calcValidCredits();
+    }
 
     /*
      * Add a new People_side.StudentProgram object to the

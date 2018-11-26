@@ -2,7 +2,10 @@ package ECAM_side;
 
 import People_side.Student;
 import People_side.Teacher;
+import UE_classes.ObservableClass;
+import UE_classes.ObservableUE;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -75,5 +78,39 @@ public class ECAM {
 
     public void addOrientation(String code, Orientation orn){
         orientations.put(code, orn);
+    }
+
+    public void init(){
+        ObservableClass class1 = new ObservableClass("DD4L", "1");
+        ObservableClass class2 = new ObservableClass("DD4X", "2");
+        ObservableClass class3 = new ObservableClass("DD4Y", "3");
+        ObservableClass class4 = new ObservableClass("DD4Z", "4");
+
+        ObservableUE ue1 = new ObservableUE("DD", "SA");
+        ue1.setCredits(99);
+        ue1.setHours(90);
+        ObservableUE ue2 = new ObservableUE("DX", "SX");
+        ue2.setCredits(2);
+        ue2.setHours(9);
+
+        ue1.addClass(class1);
+        ue2.addClass(class2);
+        ue2.addClass(class3);
+        ue2.addClass(class4);
+
+        HashMap<String, ObservableUE> ues = new HashMap<String, ObservableUE>();
+        ues.put(ue1.getCode(), ue1);
+        ues.put(ue2.getCode(), ue2);
+        Bloc bloc1 = new Bloc(ues);
+        Bloc bloc2 = new Bloc(ues);
+        Bloc bloc3 = new Bloc(ues);
+        Bloc bloc4 = new Bloc(ues);
+        Bloc bloc5 = new Bloc(ues);
+        Program bachelier = new Program(Arrays.asList(bloc1, bloc2, bloc3));
+        Program master = new Program(Arrays.asList(bloc4, bloc5));
+        Orientation MIN = new Orientation("MIN", bachelier, master);
+
+        ECAM ecam = ECAM.getInstance();
+        ecam.addOrientation(MIN.getName(), MIN);
     }
 }
