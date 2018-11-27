@@ -6,6 +6,7 @@ il serait mieux d'utiliser le folder DiagramUML comme il est le plus mis a jour 
 contient aussi le diagram d'activité.
 
 I. les configurations
+--------------------------------------------------------------------------------------
 
 On a utilisé IntelliJ pour écrire le code et le gitignore ne fonctionne que pour
 intelliJ. Les configarations recommandées sont les suivantes:
@@ -46,6 +47,8 @@ permettant de voir tout les metriques de couplage dans une page web. Utile pour
 travailler en local
 
 II. Jenkins
+--------------------------------------------------------------------------------------
+
 Pour Jenkins tout est plus ou moins terminé. Un push sur n'importe quelle branche
 crée automatiquement un build et cela verifie le conventions de codage (checkstyle)
 les test unitaires (JUnit) et le coverage (Cobertura)
@@ -68,6 +71,8 @@ fonctions commenté. Chaque fonction est supposé être commenté avec les inputs et
 les outputs, pour l'instant on n'a pas de metriques pour visualiser cela.
 
 III. le code
+--------------------------------------------------------------------------------------
+
 Le code a été rushé vers la fin est manque pas mal de features. Toutes la partie
 Teacher est absente par example dans notre V1. En plus de cela notre V1 tel que rendu
 n'est pas forcement representative du projet final. Le Main telle qu'il est, a été crée
@@ -83,13 +88,35 @@ en tout et pour tout la structure du diagramme de classes reste correcte et rest
 suffisant pour avoir une idée de comment le code fontionne.
 
 IV. liens utiles
+--------------------------------------------------------------------------------------
 
 Github: https://github.com/benjvdb9/PAE-manager
 Jenkins: https://jenkins.ecam.be/job/PAE-manager/job/PAE/
 Specifications: https://docs.google.com/document/d/1WIN8Yr4fJRLfjARc1CfKGVpqpfs5jMg1zA1cRwx_xwE/edit?fbclid=IwAR0AP6-hjbMiZWAbym5RtC9vRsV5VjgHg38pyAnajOwjwdeL4lOcy1Vz2DI
 Facebook: https://www.facebook.com/groups/2086982478298025/?ref=bookmarks
 
-V. Resumé
+V. Metriques
+--------------------------------------------------------------------------------------
+
+Les métriques à mesures ont été mentioné dans les docs mais j'ai réalisé que celui
+qui a écrit le fichier n'a jamais mentioné les valeurs visées
+(CE QUI REND LES METRIQUES TOTALEMENT INUTILES!)
+
+Je vais donc m'occuper de cette partie la:
+Coverage: 90+%
+Fonctions commentées (inputs/outputs): 100%
+Couplage: Instabilité moyenne sur le projet de 50% au moins
+
+->A vous de commenté ci les objectifs ont été atteints
+Et pour le couplage ont a des classes assez instable pour l'instant, a vous de
+dire pourquoi
+
+P.S.: Les specifications disant que le nombre de commentaires est une métrique mais
+en faite c'était le nombre de fonctions commenté (description + inputs/outputs)
+comme c'est utile pour les test unitaires
+
+VI. Resumé
+--------------------------------------------------------------------------------------
 
 PRO:
 Jenkins checkstyle en place
