@@ -116,3 +116,5 @@ définit dans le diagramme d'activité.
 Pas de base de donnée du tout. Le schema pour la DB a été fait mais rien du tout
 n'a été implementé en SQL. Pour l'instant, tout est tout le temps instancié dans
 ECAM.init()
+
+Meuilleur gestion des erreurs nécessaire.
