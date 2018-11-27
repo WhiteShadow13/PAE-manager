@@ -1,12 +1,13 @@
 package ECAM_side;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Program {
     private List<Bloc> years;
 
     public Program(List<Bloc> years){
-        this.years = years;
+        this.years = new ArrayList<Bloc>(years);
     }
 
     /*

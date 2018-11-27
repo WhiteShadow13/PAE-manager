@@ -58,7 +58,7 @@ public class ObservableClass extends Class {
      *
      * ->update specific Observable only
      *
-     * inputs: int (mapped ID)
+     * inputs: ObserverClass
      * outputs: void
      * */
     public void duplicate(ObserverClass single_class){

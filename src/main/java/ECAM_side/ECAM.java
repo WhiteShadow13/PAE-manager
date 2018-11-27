@@ -63,9 +63,7 @@ public class ECAM {
      * input: String
      * output: Student
      * */
-    public Student getStudent(String matricule){
-        return students.get(matricule);
-    }
+    public Student getStudent(String matricule){ return students.get(Integer.parseInt(matricule)); }
 
     /*
      * Adds a student to student list

@@ -14,20 +14,20 @@ public class Bloc {
     }
 
     /*
-     * Get a specific UE_classes.UE from the UE_classes.UE hashmap
+     * Get a specific UE from the UE hashmap
      *
-     * inputs: string (UE_classes.UE code)
-     * outputs: UE_classes.ObservableUE
+     * inputs: string (UE code)
+     * outputs: ObservableUE
      * */
     public ObservableUE getContent(String code){
         return content.get(code);
     }
 
     /*
-     * Get a specific UE_classes.UE from the UE_classes.UE hashmap
+     * Get a specific UE from the UE hashmap
      *
-     * inputs: string (UE_classes.UE code)
-     * outputs: UE_classes.ObservableUE
+     * inputs: string (UE code)
+     * outputs: ObservableUE
      * */
     public void addContent(ObservableUE ue){
         String code = ue.getCode();
