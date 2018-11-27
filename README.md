@@ -58,4 +58,4 @@
 ## ABOUT
 
 Project to handle a students PAE, covers both the student side and the teaher side.
-For more info check out the docs!
+For more info and user guides check out the docs!

@@ -53,10 +53,10 @@ public class Main {
         //END INITIALIZE ECAM
 
         boolean testing;
-        if (args[0] == null){
-            testing = false;
-        } else {
+        if (args[0].equals("testing")){
             testing = true;
+        } else {
+            testing = false;
         }
         if (testing) {
             String fname = "Benjamin";
